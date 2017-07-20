@@ -1,8 +1,9 @@
 package com.xyphoid.kanagrammer
 
-import android.content.res.AssetManager;
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.support.design.widget.Snackbar
+import android.support.v7.app.AppCompatActivity
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
@@ -17,13 +18,10 @@ import java.util.Arrays;
 import kotlin.collections.HashMap;
 import kotlin.collections.Map;
 import kotlin.collections.Set;
-import android.os.Handler;
-import android.R.menu
-import android.os.AsyncTask.execute
-import kotlinx.android.synthetic.main.*
 
+import kotlinx.android.synthetic.main.activity_main2.*
 
-class MainActivity : AppCompatActivity() {
+class Main2Activity : AppCompatActivity() {
 
     internal var results: Map<String, Int>? = null
     internal var handler: Handler? = null
@@ -31,9 +29,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
+        setSupportActionBar(toolbar)
         val assetManager = assets
         val mainDictionary: HashMap<String, String>
+
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+        }
 
         try {
             val input = assetManager.open("enablenew.bin")
@@ -176,13 +180,6 @@ class MainActivity : AppCompatActivity() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //menuInflater.inflate(R.menu.menu_main, menu)
-        return true
     }
 
     fun PublishProgress(s: String) {
@@ -193,17 +190,4 @@ class MainActivity : AppCompatActivity() {
         output.append(s)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        val id = item.itemId
-
-/*
-        if (id == R.id.action_settings) {
-            return true
-        }
-*/
-        return super.onOptionsItemSelected(item)
-    }
 }

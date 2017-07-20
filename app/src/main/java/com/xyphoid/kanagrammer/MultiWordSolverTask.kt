@@ -28,7 +28,7 @@ class MultiWordSolverTask : AsyncSolverTask<SolverArgs, String, HashSet<Set<Stri
         this._solverArgs.mainActivity.PublishProgress(progress[0])
     }
 
-    fun onPostExecute(anagram: Set<Set<String>>) {
+    override fun onPostExecute(anagram: HashSet<Set<String>>) {
 
         this._solverArgs.mainActivity.PublishAppend("\n\n")
 

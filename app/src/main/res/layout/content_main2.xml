@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.xyphoid.kanagrammer.MainActivity">
-
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.xyphoid.kanagrammer.Main2Activity"
+    tools:showIn="@layout/activity_main2">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -93,5 +94,4 @@
 
 
     </LinearLayout>
-</android.support.design.widget.CoordinatorLayout>
-
+</android.support.constraint.ConstraintLayout>

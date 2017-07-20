@@ -9,10 +9,10 @@ import java.util.HashMap;
  * Created by Chad Plaster on 7/19/2017.
  */
 
-class SolverArgs(dictionary: HashMap<String, String>, mainActivity: MainActivity, letters: String, lengths: IntArray?) {
+class SolverArgs(dictionary: HashMap<String, String>, mainActivity: Main2Activity, letters: String, lengths: IntArray?) {
 
     var dictionary: HashMap<String, String>
-    var mainActivity: MainActivity;
+    var mainActivity: Main2Activity;
     var solverTask: AsyncSolverTask<*, *, *>? = null
     var letters: String
     var lengths: IntArray = kotlin.IntArray(1);
