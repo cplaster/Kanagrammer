@@ -1,0 +1,15 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+cplaster 2015-12-10 20:18
+Implemented a different processing engine. SortedWordDictionary deserializes the main dictionary and prunes it based on queries and minimum
+word length. AnagramSolver is an instance class that encapsulates SortedWordDictionary and provides various methods which manipulate SortedWordDictionary.
+AnagramSolverHelper is a static class that provides utility methods used by AnagramSolver.
+
+Currently, the engine allows for searching for Exact anagrams, Exact subsets (scrabble usage) and sorting both alphabetically and by score, and a Multiword search
+which is also optionally limited by minimum word length.
+
+Moving forward, the Multiword search should also optionally implement a filter for the exact amount of words desired, and also optionally the lengths of each
+of those respective desired words. To begin with, these filters can be applied upon the base Multiword search results, however optimally this may be better
+applied during the base Multiword method itself for speed reasons.
+
+Also, all search functions should ideally happen on a thread separate from the UI, in order to provide progress feedback. The Multiword method in particular can
+take a significant amount of time to complete, so some UI feedback really is necessary.
